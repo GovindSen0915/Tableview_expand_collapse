@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpandCollapseTableViewCell" rowHeight="111" id="KGk-i7-Jjw" customClass="ExpandCollapseTableViewCell" customModule="Tableview_expand_collapse" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="435" height="111"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="435" height="111"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blL-Mu-Jdg">
+                        <rect key="frame" x="0.0" y="0.0" width="435" height="111"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vae-zz-0iv">
+                                <rect key="frame" x="24" y="10" width="361" height="91"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPu-lJ-blg">
+                                <rect key="frame" x="395" y="10" width="20" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="jV9-Jz-5uz"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="dropDownButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bNu-Mc-KCi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WPu-lJ-blg" secondAttribute="trailing" constant="20" id="D6D-d3-LNt"/>
+                            <constraint firstItem="WPu-lJ-blg" firstAttribute="leading" secondItem="vae-zz-0iv" secondAttribute="trailing" constant="10" id="I9R-eD-vWf"/>
+                            <constraint firstItem="vae-zz-0iv" firstAttribute="leading" secondItem="blL-Mu-Jdg" secondAttribute="leading" constant="24" id="PzS-Kb-IAd"/>
+                            <constraint firstAttribute="bottom" secondItem="vae-zz-0iv" secondAttribute="bottom" constant="10" id="huS-Pk-K24"/>
+                            <constraint firstItem="vae-zz-0iv" firstAttribute="top" secondItem="blL-Mu-Jdg" secondAttribute="top" constant="10" id="uzq-DD-WdN"/>
+                            <constraint firstAttribute="bottom" secondItem="WPu-lJ-blg" secondAttribute="bottom" constant="10" id="vtw-iW-FYP"/>
+                            <constraint firstItem="WPu-lJ-blg" firstAttribute="top" secondItem="blL-Mu-Jdg" secondAttribute="top" constant="10" id="y64-xp-Q7R"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="blL-Mu-Jdg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="CsU-r1-Kd1"/>
+                    <constraint firstAttribute="trailing" secondItem="blL-Mu-Jdg" secondAttribute="trailing" id="KPm-DN-YiP"/>
+                    <constraint firstAttribute="bottom" secondItem="blL-Mu-Jdg" secondAttribute="bottom" id="Uyf-d3-6Ui"/>
+                    <constraint firstItem="blL-Mu-Jdg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Vg9-e6-Fmc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="containerView" destination="blL-Mu-Jdg" id="GS0-cE-inY"/>
+                <outlet property="dropDownButton" destination="WPu-lJ-blg" id="dYB-G8-DTh"/>
+                <outlet property="nameLabel" destination="vae-zz-0iv" id="eke-2L-Llu"/>
+            </connections>
+            <point key="canvasLocation" x="49.618320610687022" y="42.605633802816904"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
