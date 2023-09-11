@@ -9,7 +9,6 @@ import Foundation
 
 protocol ExpandCollapseViewModelDelegate: AnyObject {
     func reload()
-    
 }
 
 class ExpandCollapseViewModel {
@@ -43,7 +42,6 @@ class ExpandCollapseViewModel {
             dummyShift1CellModel.identifier = shiftIdentifier
             trackIndex += 1
             primaryIndexePaths.append(IndexPath(row: trackIndex, section: 0))
-//            dummyShift1CellsArray.append(dummyCellModel)
             
             for index in 1..<4 {
                 let floorIdentifier = shiftIdentifier + "-Shift\(index)"
@@ -65,7 +63,6 @@ class ExpandCollapseViewModel {
         
         print("Floors: ", dummyFloor1CellsArray)
         print("Shifts: ", dummyShift1CellsArray)
-//        print("Nurses: ", )
         dummyNurse1CellModel.childIndexPaths = primaryIndexePaths
         self.cellModels.append(dummyNurse1CellModel)
         self.cellModels.append(contentsOf: dummyShift1CellsArray)
@@ -79,6 +76,7 @@ class ExpandCollapseViewModel {
     
 }
 
+// MARK: - ExpandCollapseViewControllerDelegate
 extension ExpandCollapseViewModel: ExpandCollapseViewControllerDelegate {
     
     var numberOfSections: Int {
@@ -107,7 +105,6 @@ extension ExpandCollapseViewModel: ExpandCollapseViewControllerDelegate {
     }
     
     func addItem(for identifier: String, forCellType cellType: DummyCellType) {
-        let totalCellModels = (self.sectionModels.first?.cellModels ?? []).filter({ (($0 as? ExpandCollapseTableCellModel)?.identifier ?? "").localizedCaseInsensitiveContains(identifier)})
         for cellModel in self.sectionModels.first?.cellModels ?? [] {
             if let model = cellModel as? ExpandCollapseTableCellModel,
                (model.identifier.localizedCaseInsensitiveContains(identifier) && model.identifier != identifier) {
@@ -120,18 +117,6 @@ extension ExpandCollapseViewModel: ExpandCollapseViewControllerDelegate {
                 }
             }
         }
-    }
-}
-
-class SectionModel {
-    var headerModel: Any?
-    var cellModels: [Any]
-    var footerModel: Any?
-    
-    init(headerModel: Any? = nil, cellModels: [Any], footerModel: Any? = nil) {
-        self.headerModel = headerModel
-        self.cellModels = cellModels
-        self.footerModel = footerModel
     }
 }
 

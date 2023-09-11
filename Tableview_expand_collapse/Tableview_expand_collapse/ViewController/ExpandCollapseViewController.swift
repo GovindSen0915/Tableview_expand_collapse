@@ -24,8 +24,8 @@ class ExpandCollapseViewController: UIViewController {
     
     var viewModel: ExpandCollapseViewControllerDelegate!
     var cellType: DummyCellType = .nurse
-
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTableView()
@@ -36,8 +36,8 @@ class ExpandCollapseViewController: UIViewController {
     private func setupViewModel() {
         self.viewModel = ExpandCollapseViewModel(view: self)
     }
-
-
+    
+    
 }
 
 extension ExpandCollapseViewController: ExpandCollapseViewModelDelegate {
@@ -66,7 +66,7 @@ extension ExpandCollapseViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: "ExpandCollapseTableViewCell") as? ExpandCollapseTableViewCell else {
+            withIdentifier: "ExpandCollapseTableViewCell") as? ExpandCollapseTableViewCell else {
             return UITableViewCell()
         }
         
@@ -97,7 +97,7 @@ extension ExpandCollapseViewController: UITableViewDelegate, UITableViewDataSour
     }
 }
 
-extension ExpandCollapseViewController: ExpandCollapseTableViewCellDeleagte {
+extension ExpandCollapseViewController: ExpandCollapseTableViewCellDelegate {
     func didTapDropDownButton(for identifier: String, with isExpanded: Bool, cellType: DummyCellType) {
         self.cellType = cellType
         if isExpanded {
