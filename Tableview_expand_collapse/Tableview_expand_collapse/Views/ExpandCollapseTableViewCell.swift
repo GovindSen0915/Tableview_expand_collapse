@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol ExpandCollapseTableViewCellDeleagte: AnyObject {
+protocol ExpandCollapseTableViewCellDelegate: AnyObject {
     func didTapDropDownButton(for identifier: String, with isSelected: Bool, cellType: DummyCellType)
 }
 
@@ -16,7 +16,7 @@ class ExpandCollapseTableViewCell: TableViewCell {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dropDownButton: UIButton!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,19 +27,16 @@ class ExpandCollapseTableViewCell: TableViewCell {
         self.nameLabel.text = model.name
         self.dropDownButton.setImage(model.dropDownImage, for: .normal)
         self.dropDownButton.isHidden = model.cellType == .floor
-        
     }
     
     @IBAction func dropDownButtonAction(_ sender: UIButton) {
         if let item = self.item as? ExpandCollapseTableCellModel,
-        let delegate = delegate as? ExpandCollapseTableViewCellDeleagte {
+           let delegate = delegate as? ExpandCollapseTableViewCellDelegate {
             delegate.didTapDropDownButton(for: item.identifier, with: item.isExpanded, cellType: item.cellType)
             self.dropDownButton.setImage(item.dropDownImage, for: .normal)
             item.isExpanded = !item.isExpanded
         }
     }
-
-    
 }
 
 class ExpandCollapseTableCellModel {
@@ -79,27 +76,10 @@ class ExpandCollapseTableCellModel {
     
     var dropDownImage: UIImage {
         return self.isExpanded ? UIImage(systemName: "chevron.up")! : UIImage(systemName: "chevron.down")!
-        
     }
     
     var contentHeightConstant: CGFloat {
         return self.isExpanded ? 60 : 0
-        
     }
 }
 
-class TableViewCell: UITableViewCell {
-
-    var item: Any? {
-        didSet {
-            self.configure(self.item)
-        }
-    }
-
-    weak var delegate: NSObjectProtocol?
-
-    func configure(_ item: Any?) {
-
-    }
-
-}

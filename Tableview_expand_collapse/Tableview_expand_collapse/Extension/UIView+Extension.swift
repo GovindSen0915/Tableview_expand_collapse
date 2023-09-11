@@ -2,7 +2,7 @@
 //  UIView+Extension.swift
 //  Collapse
 //
-//  Created by Mohit Kumar Singh on 14/02/23.
+//  Created by Created by Nickelfox on 07/04/23.
 //
 
 import Foundation
