@@ -64,19 +64,67 @@
 		7158B5A729DFF5FB00319F82 /* Tableview_expand_collapse */ = {
 			isa = PBXGroup;
 			children = (
-				7158B5A829DFF5FB00319F82 /* AppDelegate.swift */,
-				7158B5AA29DFF5FB00319F82 /* SceneDelegate.swift */,
-				7158B5AC29DFF5FB00319F82 /* ExpandCollapseViewController.swift */,
-				7158B5BE29DFFC5600319F82 /* ExpandCollapseViewModel.swift */,
-				7158B5AE29DFF5FB00319F82 /* Main.storyboard */,
+				E81DD81A2AAF67E300CDF7A8 /* Application */,
+				E81DD81D2AAF681D00CDF7A8 /* Storyboard */,
+				E81DD81E2AAF683500CDF7A8 /* Views */,
+				E81DD81C2AAF680D00CDF7A8 /* ViewModel */,
+				E81DD81B2AAF67FF00CDF7A8 /* ViewController */,
+				E81DD81F2AAF684300CDF7A8 /* Extension */,
 				7158B5B129DFF5FD00319F82 /* Assets.xcassets */,
-				7158B5B329DFF5FD00319F82 /* LaunchScreen.storyboard */,
 				7158B5B629DFF5FD00319F82 /* Info.plist */,
-				7158B5C029DFFCBA00319F82 /* ExpandCollapseTableViewCell.swift */,
-				7158B5C129DFFCBA00319F82 /* ExpandCollapseTableViewCell.xib */,
-				7158B5C429DFFF5D00319F82 /* UIView+Extension.swift */,
 			);
 			path = Tableview_expand_collapse;
+			sourceTree = "<group>";
+		};
+		E81DD81A2AAF67E300CDF7A8 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				7158B5A829DFF5FB00319F82 /* AppDelegate.swift */,
+				7158B5AA29DFF5FB00319F82 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		E81DD81B2AAF67FF00CDF7A8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7158B5AC29DFF5FB00319F82 /* ExpandCollapseViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E81DD81C2AAF680D00CDF7A8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7158B5BE29DFFC5600319F82 /* ExpandCollapseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E81DD81D2AAF681D00CDF7A8 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				7158B5AE29DFF5FB00319F82 /* Main.storyboard */,
+				7158B5B329DFF5FD00319F82 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		E81DD81E2AAF683500CDF7A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7158B5C029DFFCBA00319F82 /* ExpandCollapseTableViewCell.swift */,
+				7158B5C129DFFCBA00319F82 /* ExpandCollapseTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E81DD81F2AAF684300CDF7A8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7158B5C429DFFF5D00319F82 /* UIView+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
